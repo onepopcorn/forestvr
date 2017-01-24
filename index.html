@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Forest VR</title>
+    <meta name="description" content="A relaxing 3D/VR experience created with A-FRAME and THREE.JS">
+    <meta name="author" content="onepopcorn">
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="http://forestvr.onepopcorn.com/assets/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="http://forestvr.onepopcorn.com/assets/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://forestvr.onepopcorn.com/assets/images/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="http://forestvr.onepopcorn.com/assets/images/icons/manifest.json">
+    <link rel="mask-icon" href="http://forestvr.onepopcorn.com/assets/images/icons/safari-pinned-tab.svg" color="#24a123">
+    <link rel="shortcut icon" href="http://forestvr.onepopcorn.com/assets/images/icons/favicon.ico">
+    <meta name="msapplication-config" content="http://forestvr.onepopcorn.com/assets/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Open Graph -->
+    <meta property="og:image:width" content="205">
+    <meta property="og:image:height" content="205">
+    <meta property="og:description" content="A relaxing 3D/VR experience created with A-FRAME and THREE.JS">
+    <meta property="og:title" content="Forest VR">
+    <meta property="og:image" content="http://forestvr.onepopcorn.com/assets/images/og-image.jpg">
+    <meta property="og:url" content="forestvr.onepopcorn.com">
+    <!-- Twitter Card -->
+
+
+    <link rel="stylesheet" href="bundle.css">
+    <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/IdeaSpaceVR/aframe-particle-system-component/master/dist/aframe-particle-system-component.min.js"></script>
+
+  </head>
+  <body>
+    <!-- AFRAME -->
+    <a-scene id="scene" sound="src: #soundBg; autoplay: true; loop: true" fog="type: linear; far: 350; color:#efefef" inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+      <a-assets>
+        <a-asset-item id="mountain" src="assets/models/mountain.dae"></a-asset-item>
+        <a-asset-item id="tree1" src="assets/models/tree1.dae"></a-asset-item>
+        <a-asset-item id="tree2" src="assets/models/tree2.dae"></a-asset-item>
+        <a-asset-item id="tree3" src="assets/models/tree3.dae"></a-asset-item>
+        <a-asset-item id="tree4" src="assets/models/tree4.dae"></a-asset-item>
+        <a-asset-item id="rock1" src="assets/models/rock1.dae"></a-asset-item>
+        <a-asset-item id="rock2" src="assets/models/rock2.dae"></a-asset-item>
+        <a-asset-item id="rock3" src="assets/models/rock3.dae"></a-asset-item>
+        <a-asset-item id="grass1" src="assets/models/grass1.dae"></a-asset-item>
+        <a-asset-item id="cloud1" src="assets/models/cloud1.dae"></a-asset-item>
+        <img id="bg" src="assets/images/bg.jpg" />
+        <audio id="soundBg" src="assets/sounds/forest_bg.mp3" type="audio/mp3" preload="auto" />
+      </a-assets>
+      
+      <!-- Camera -->
+      <a-entity id="main-camera" camera look-controls position="0 2 -2"></a-entity>
+
+      <!-- Lights -->
+      <a-entity id="ambient-light" light="type: ambient; color:white; intensity: 0.8" ></a-entity>
+      <a-entity id="sun" light="type: point; color:white" position="-3.71 10.88 2" ></a-entity>
+      <a-entity id="cam-light" light="type: point; color:white" position="0 1.42 0" ></a-entity>
+
+      <!-- Particles -->
+      <a-entity position="0 2.25 -40" particle-system="preset: snow; particleCount: 2000;"></a-entity>
+      
+      <!-- Mountain -->
+      <a-entity id="mountains" collada-model="#mountain" scale="7 7 7" position="0 -0 -37"></a-entity>
+      
+      <!-- Trees 1 --> 
+      <a-entity id="three1_1" collada-model="#tree1" position="-3.22 0.77 0"></a-entity>
+      <a-entity id="three1_2" collada-model="#tree1" position="1.87 1.32 0"></a-entity>
+      <a-entity id="three1_3" collada-model="#tree1" position="3.23 0.36 5.58" rotation="0 45 0"></a-entity>
+      <a-entity id="three1_4" collada-model="#tree1" position="-11.88 0.61 -0.97" rotation="0 78 0"></a-entity>
+      
+      <!-- Trees 2 -->
+      <a-entity id="three2_1" collada-model="#tree2" position="1 1.20 -2" rotation="0 -45 0"></a-entity>
+      <a-entity id="three2_2" collada-model="#tree2" position="-2 0.42 9.48"></a-entity>
+      <a-entity id="three2_3" collada-model="#tree2" position="0.1 0.34 12.05"></a-entity>
+      <a-entity id="three2_4" collada-model="#tree2" position="-7.17 0.27 13.42"></a-entity>
+      <a-entity id="three2_5" collada-model="#tree2" position="5.97 0.25 15.91"></a-entity>
+      <a-entity id="three2_6" collada-model="#tree2" position="2.89 0.25 18.74"></a-entity>
+
+      <!-- Trees 3 -->
+      <a-entity id="three3_1" collada-model="#tree3" position="-8.08 2.02 -7.84" rotation="0 0 0"></a-entity>
+      <a-entity id="three3_2" collada-model="#tree3" position="-2.75 2.36 -13.8" rotation="0 45 0"></a-entity>
+      
+      <!-- Trees 4 -->
+      <a-entity id="three4_1" collada-model="#tree4" position="-8.08 2.66 -18.64" rotation="0 0 0"></a-entity>
+      <a-entity id="three4_2" collada-model="#tree4" position="7.81 2.52 -18.64" rotation="0 35 0"></a-entity>
+      <a-entity id="three4_3" collada-model="#tree4" position="-18.41 2.47 -12.92" rotation="0 35 0"></a-entity>
+
+      <!-- Stones -->
+      <a-entity id="rock1_1" collada-model="#rock1"  position="-1.87 0.8 0"></a-entity>
+      <a-entity id="rock2_1" collada-model="#rock2"  position="1.87 0.8 0"></a-entity>
+      <a-entity id="rock2_2" collada-model="#rock2"  position="-5.85 1.21 -7.91"></a-entity>
+      <a-entity id="rock3_1" collada-model="#rock3"  position="-1.45 1.5 -7.17"></a-entity>
+
+      <!-- Grass -->
+      <a-entity id="grass1_1" collada-model="#grass1" position="-1.58 0.98 -0.86"></a-entity>
+      <a-entity id="grass1_2" collada-model="#grass1" position="2.42 1.02 -0.86"></a-entity>
+      <a-entity id="grass1_3" collada-model="#grass1" position="0.02 1.57 -4.81" rotation="0 45 0"></a-entity>
+      <a-entity id="grass1_4" collada-model="#grass1" position="-1.74 1.56 -6" rotation="0 32 0"></a-entity>
+
+      <!-- Sky -->
+      <a-sky src="#bg" material="fog: false"></a-sky>
+      <a-entity id="cloud1_1" collada-model="#cloud1" position="4.33 15.56 -26.41"></a-entity>
+      <a-entity id="cloud1_2" collada-model="#cloud1" position="-21.34 19.12 -30.88" rotation="9.17 -152.05 15.47"></a-entity>
+      <a-entity id="cloud1_3" collada-model="#cloud1" position="9.79 14.83 -0.25" rotation="0 132.94 0"></a-entity>
+      <a-entity id="cloud1_4" collada-model="#cloud1" position="-26.38 27.58 -2.9" rotation="0 90.38 0"></a-entity>  
+      <a-entity id="cloud1_5" collada-model="#cloud1" position="-7.06 12.22 19.56" rotation="0 0 0"></a-entity>
+      <a-entity id="cloud1_6" collada-model="#cloud1" position="-3.75 24.46 12.37" rotation="0 45 0"></a-entity>
+    </a-scene>
+
+    <div id="notice">
+      <p>Experience made by <a target="_blank" href="https://onepopcorn.com">onepopcorn</a> with <a target="_blank" href="">A-Frame</a> and <a href="">Blender</a>.</p>
+      <p>Most models taken from <a href="http://tf3dm.com/3d-models/lowpoly" target="_blank">TF3DM</a></p>
+    </div>
+
+    <div id="preloader">
+      <img id="icon" src="assets/images/tree_icon.png">
+      <h1>Forest VR</h1>
+      <p>loading</p>
+    </div>
+
+    <script src="bundle.js"></script>
+  </body>
+</html>

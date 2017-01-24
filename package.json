@@ -1,0 +1,30 @@
+{
+  "name": "forestVR",
+  "description": "A simple VR experience",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "rm -f bundle.* && gulp"
+  },
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "budo": "^7.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-uglify": "^2.0.0"
+  },
+  "keywords": [
+    "aframe",
+    "aframe-example",
+    "aframe-scene",
+    "webvr",
+    "vr"
+  ],
+  "dependencies": {
+    "aframe": "^0.3.2",
+    "aframe-layout-component": "^3.0.1",
+    "aframe-text-component": "^0.3.0"
+  }
+}

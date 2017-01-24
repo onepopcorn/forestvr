@@ -1,0 +1,57 @@
+#preloader {
+   top: 0; 
+   left:0; 
+   width: 100%; 
+   height: 100%; 
+   position: absolute; 
+   text-align: center;
+   background-color:$bg-color;
+}
+
+#preloader {
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-20%);
+
+  #icon {
+    transform:translateX(55px);
+  }
+
+  p {
+    font-family: "fabricaregular";
+    animation: blink 1s infinite alternate;
+  }
+}
+
+
+#notice {
+  background-color: rgba(0,0,0,0.4);
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  text-align: center;
+  font-size: 12px;
+  p {
+    margin:5px 0;
+  }
+}
+
+@keyframes blink {
+  0%{ opacity:0 } 
+  100% { opacity: 1 }
+}
+
+body {
+  #scene, #notice {
+    opacity: 0;
+  }
+
+  &.loaded {
+    #scene, #notice {
+      opacity:1;
+      transition: opacity 700ms ease-in;
+    }
+  }
+}
