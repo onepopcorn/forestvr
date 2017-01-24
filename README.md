@@ -2,6 +2,10 @@
 
 A relaxing 3D/VR experience created with A-FRAME and THREE.JS.
 
+### Example
+
+See it in action [here](http://forestvr.onepopcorn.com)
+
 ### Installation
 
 First make sure you have Node installed.
