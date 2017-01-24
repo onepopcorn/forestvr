@@ -60,4 +60,5 @@ gulp.task('watch', () =>{
 	})
 })
 
-gulp.task('default',['scripts','styles','watch'])
+gulp.task('deploy',['scripts','styles'])
+gulp.task('default',['deploy','watch'])

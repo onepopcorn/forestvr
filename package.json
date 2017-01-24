@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "start": "rm -f bundle.* && gulp"
+    "start": "rm -f bundle.* && gulp",
+    "deploy": "gulp deploy"
   },
   "devDependencies": {
     "babelify": "^7.3.0",
