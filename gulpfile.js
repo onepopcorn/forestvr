@@ -3,7 +3,9 @@ var gulp         = require('gulp'),
 	sass         = require('gulp-ruby-sass'),
 	autoprefixer = require('gulp-autoprefixer'),
 	uglify       = require('gulp-uglify'),
-	rename       = require('gulp-rename');
+	rename       = require('gulp-rename'),
+	swPrecache   = require('sw-precache'),
+	packageJson  = require('./package.json');
 
 const config = {
 	js : {
@@ -20,6 +22,35 @@ const config = {
 	}
 }
 
+function writeServiceWorkerFile(callback) {
+	swConfig = {
+		cacheId: packageJson.name,
+		runtimeCaching: [{
+			urlPattern: /^https:\/\/cdn\.rawgit\.com\//,
+			handler: 'cacheFirst'
+		},{
+			urlPattern: /^https:\/\/aframe\.io\//,
+			handler: 'cacheFirst'
+		},{
+			urlPattern: /\/assets\/sounds\//,
+			handler: 'cacheFirst'
+		}],
+		staticFileGlobs: [
+			'assets/fonts/fabrica-webfont.woff',
+			'assets/images/bg.jpg',
+			'assets/images/tree_icon.png',
+			'assets/models/**.dae',
+			'bundle.css',
+			'bundle.js',
+			'index.html'
+		]
+	}
+	swPrecache.write('service-worker.js', swConfig, callback);
+}
+
+gulp.task('generate-service-worker', ['scripts', 'styles'], function(callback) {
+	writeServiceWorkerFile(callback);
+});
 
 gulp.task('scripts', () =>{
 	return gulp.src(config.js.in)
@@ -60,5 +91,5 @@ gulp.task('watch', () =>{
 	})
 })
 
-gulp.task('deploy',['scripts','styles'])
+gulp.task('deploy',['scripts','styles','generate-service-worker'])
 gulp.task('default',['deploy','watch'])
