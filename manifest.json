@@ -2,14 +2,14 @@
     "name": "Forest VR",
     "icons": [
         {
-            "src": "http://forestvr.onepopcorn.com/assets/images/icons/android-chrome-144x144.png",
+            "src": "./assets/images/icons/android-chrome-144x144.png",
             "sizes": "144x144",
             "type": "image/png"
         }
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "start_url": "http://forestvr.onepopcorn.com",
+    "start_url": "./index.html",
     "display": "standalone",
     "orientation": "landscape"
 }
