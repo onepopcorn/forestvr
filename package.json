@@ -1,7 +1,7 @@
 {
-  "name": "forestVR",
+  "name": "forest-vr",
   "description": "A simple VR experience",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "scripts": {
     "start": "rm -f bundle.* && gulp",
@@ -25,8 +25,8 @@
     "vr"
   ],
   "dependencies": {
-    "aframe": "^0.3.2",
-    "aframe-layout-component": "^3.0.1",
-    "aframe-text-component": "^0.3.0"
+    "aframe": "^0.8.2",
+    "aframe-layout-component": "5.3.0",
+    "aframe-text-component": "0.4.2"
   }
 }
