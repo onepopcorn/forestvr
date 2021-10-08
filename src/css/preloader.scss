@@ -22,6 +22,14 @@
     font-family: "fabricaregular";
     animation: blink 1s infinite alternate;
   }
+
+  p.start_btn {
+    border-radius: 3px;
+    border: 1px solid;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: inline-block;
+  }
 }
 
 

@@ -1,20 +1,5 @@
-/* GA */
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-
 (function(){
-	/* analytics */
-	ga('create', 'UA-83939238-1', 'auto');
-	ga('send', {
-		hitType:'pageview',
-		page: location.href 
-	})
-
 	/* Preloader */
-	var loader = document.querySelector('a-assets')
 	var scene = document.querySelector('a-scene')
 	var loading = document.querySelector('#preloader')
 	
@@ -24,13 +9,24 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		scene.addEventListener('loaded', start)
 	}
 
-	var interval
-
 	function start () {
+		var startBtn = loading.querySelector('p')
+		
+		startBtn.innerText = 'click me to start'
+		startBtn.classList.add('start_btn')
+
+		startBtn.onclick = show_content
+
+		
+	}
+
+	function show_content() {
 		// Hide VR button if not mobile
 		if(!scene.isMobile) {
 			scene.setAttribute("vr-mode-ui","enabled: false")
 		}
+
+		document.body.querySelector('audio').play()
 
 		// Show content
 		document.body.removeChild(loading)

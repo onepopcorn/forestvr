@@ -31,7 +31,6 @@
 
     <link rel="stylesheet" href="bundle.css">
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/IdeaSpaceVR/aframe-particle-system-component/master/dist/aframe-particle-system-component.min.js"></script>
 <script>
 /**
  * Copyright 2015 Google Inc. All rights reserved.
@@ -124,10 +123,7 @@ if ('serviceWorker' in navigator) {
       <a-entity id="ambient-light" light="type: ambient; color:white; intensity: 0.8" ></a-entity>
       <a-entity id="sun" light="type: point; color:white" position="-3.71 10.88 2" ></a-entity>
       <a-entity id="cam-light" light="type: point; color:white" position="0 1.42 0" ></a-entity>
-
-      <!-- Particles -->
-      <a-entity position="0 2.25 -40" particle-system="preset: snow; particleCount: 2000;"></a-entity>
-      
+     
       <!-- Mountain -->
       <a-entity id="mountains" collada-model="#mountain" scale="7 7 7" position="0 -0 -37"></a-entity>
       
